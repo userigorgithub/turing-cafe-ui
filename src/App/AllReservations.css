@@ -1,0 +1,7 @@
+.all-reservations-cont {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  background-color: white;
+  /* border: 2px solid green; */
+
+}
