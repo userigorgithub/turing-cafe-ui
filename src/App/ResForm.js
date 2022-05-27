@@ -26,12 +26,22 @@ class ResForm extends Component {
     }
     this.props.addReservation(res)
     this.clearReservations()
+
+    return fetch('http://localhost:3001/api/v1/reservations', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+        body: JSON.stringify(res)
+    })
+    .then(response => response.json())
+    .then(data => console.log('post', data))
+
   }
 
   clearReservations = () => {
     this.setState({name: '', date: '', time: '', number: ''})
   }
-
 
 
   render() {
@@ -46,8 +56,5 @@ class ResForm extends Component {
     )
   }
 }
-
-
-
 
 export default ResForm;
