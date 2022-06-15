@@ -2,8 +2,7 @@ import React from 'react';
 import './AllReservations.css';
 import ResCard from './ResCard';
 
-
-const AllReservations = ({listOfReservations}) => {
+const AllReservations = ({listOfReservations, deleteReservation}) => {
   const resys = listOfReservations.map(reservation => {
     return (
       <ResCard
@@ -13,6 +12,8 @@ const AllReservations = ({listOfReservations}) => {
       date={reservation.date}
       time={reservation.time}
       number={reservation.number}
+
+      deleteRes={deleteReservation}
       />
     )
 
@@ -23,7 +24,5 @@ const AllReservations = ({listOfReservations}) => {
     </div>
   )
 }
-
-
 
 export default AllReservations;

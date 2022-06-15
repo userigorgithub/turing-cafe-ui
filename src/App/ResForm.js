@@ -12,11 +12,9 @@ class ResForm extends Component {
     }
   }
 
-
   changeState = (event) => {
     this.setState({[event.target.name]: event.target.value})
   }
-
 
   submitReservation = (event) => {
     event.preventDefault();
@@ -42,7 +40,6 @@ class ResForm extends Component {
   clearReservations = () => {
     this.setState({name: '', date: '', time: '', number: ''})
   }
-
 
   render() {
     return (
